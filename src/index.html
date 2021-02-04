@@ -5,26 +5,119 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Generador de imagen de perfil</title>
-  <link rel="stylesheet" href="index.css"/>
+  <link rel="stylesheet" href="index.css" />
 </head>
 
 <body>
   <div class="container">
     <h1>Generador de fotos de perfil</h1>
 
-    <canvas id="profile-pic" width="500" height="500"></canvas>
+    <div class="image-container">
+      <canvas id="profile-pic" width="500" height="500"></canvas>
+    </div>
 
     <div class="form" id="form">
-      <input id="color-primary" type="color" value="#0000ff">
-      <input id="color-secondary" type="color">
-      <input id="color-terciary" type="color">
-      <input type="color" id="color-text" value="#ffffff">
-      <button onclick="draw()">Dibujar</button>
+      <form>
+        <div class="colors-container">
+          <h3>Fondo</h3>
+          <div class="radio">
+            <h4>Número de Colores</h4>
+            <label for="one-color">1 color</label>
+            <input 
+              type="radio" 
+              id="one-color" 
+              value="one" 
+              name="colornumber" 
+              onclick="checkRadio()"
+              checked>
+            
+            <label for="two-color">2 colores</label>
+            <input 
+              type="radio" 
+              id="two-color" 
+              value="two" 
+              name="colornumber"
+              onclick="checkRadio()">
+            
+            <label for="three-color">3 colores</label>
+            <input 
+              type="radio" 
+              id="three-color" 
+              value="three" 
+              name="colornumber"
+              onclick="checkRadio()">
+          </div>
+
+          <div class="gradient" id="gradient-container" hidden>
+            <h4>Gradiente</h4>
+            <label for="linear">Linear</label>
+            <input 
+              type="radio" 
+              id="linear" 
+              value="linear" 
+              name="gradient" 
+              checked>
+            <label for="radial">Radial</label>
+            <input 
+              type="radio" 
+              id="radial" 
+              value="radial" 
+              name="gradient">
+          </div>
+
+          <div class="selector">
+            <h4>Color</h4>
+            <div class="input">
+              <label for="color-primary">Color Primario</label>
+              <input id="color-primary" type="color" value="#0000ff">
+            </div>
+            <div class="input">
+              <label for="color-secondary">Color Secundario</label>
+              <input id="color-secondary" type="color" value="#00ff00" disabled>
+            </div>
+            <div class="input">
+              <label for="color-terciary">Color Terciario</label>
+              <input id="color-terciary" type="color" value="#ff0000" disabled>
+            </div>
+          </div>
+        </div>
+
+        <div class="text-container">
+          <h3>Texto</h3>
+          <div class="check">
+            <label for="border">Borde</label>
+            <input 
+              type="checkbox" 
+              id="border" 
+              name="border" 
+              onclick="checkBorder()"">
+          </div>
+
+          <div class="selector">
+            <h4>Color</h4>
+            <div class="input">
+              <label for="color-text"> Color del Texto</label>
+              <input type="color" id="color-text" value="#ffff00">
+            </div>
+            <div class="input">
+              <label for="border-color-text"> Borde del Texto</label>
+              <input 
+                type="color" 
+                id="border-color-text" 
+                value="#000000" 
+                disabled>
+            </div>
+          </div>
+
+      </form>
     </div>
-    <div class="form" id="export">
-      <button onclick="saveImage()">Guardar Imagen</button>
-    </div>
-    
+
+    <button onclick="draw()">Dibujar</button>
+  </div>
+  <div class="form" id="export">
+    <button onclick="saveImage()">Descargar</button>
+  </div>
+
   </div>
   <script src="index.js"></script>
 </body>

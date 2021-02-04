@@ -1,3 +1,10 @@
-#profile-pic {
+body {
+  font-family: Verdana, Geneva, Tahoma, sans-serif
+}
+
+.image-container {
+  width: fit-content;
+  height: fit-content;
   border: solid 1px black;
+  border-radius: 15%;
 }
