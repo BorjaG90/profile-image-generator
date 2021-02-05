@@ -50,7 +50,7 @@ function draw() {
 
     // Circulo
     ctx.beginPath();
-    ctx.arc(250, 250, 250, 0, Math.PI * 2, true);
+    ctx.arc(175, 175, 175, 0, Math.PI * 2, true);
     ctx.stroke();
 
     // Fondo
@@ -69,7 +69,7 @@ function draw() {
         ctx.fillStyle = lingrad;
       } else {
         // Gradiente radial
-        var radgrad = ctx.createRadialGradient(250, 250, 55, 250, 250, 300);
+        var radgrad = ctx.createRadialGradient(175, 175, 30, 175, 175, 200);
         radgrad.addColorStop(0, primaryColor);
         radgrad.addColorStop(1, secondaryColor);
         ctx.fillStyle = radgrad;
@@ -88,7 +88,7 @@ function draw() {
         ctx.fillStyle = lingrad;
       } else {
         // Gradiente radial
-        var radgrad = ctx.createRadialGradient(250, 250, 40, 250, 250, 250);
+        var radgrad = ctx.createRadialGradient(175, 175, 40, 175, 175, 175);
         radgrad.addColorStop(0, primaryColor);
         radgrad.addColorStop(0.5, secondaryColor);
         radgrad.addColorStop(1, terciaryColor);
@@ -101,10 +101,10 @@ function draw() {
     if (form.border.checked) {
       // Con borde
       var borderColor = document.querySelector("#border-color-text").value;
-      addText(canvas, ctx, 55, form.fontfamily.value, textColor, borderColor);
+      addText(canvas, ctx, 35, form.fontfamily.value, textColor, borderColor);
     } else {
       // Sin borde
-      addText(canvas, ctx, 55, form.fontfamily.value, textColor);
+      addText(canvas, ctx, 35, form.fontfamily.value, textColor);
     }
   }
 }
