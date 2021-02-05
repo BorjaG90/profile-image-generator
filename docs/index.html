@@ -14,101 +14,123 @@
   <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap" rel="stylesheet">
 </head>
 
 <body>
+  <h1>Generador de fotos de perfil</h1>
   <div class="container">
-    <h1>Generador de fotos de perfil</h1>
-
-    <div class="image-container">
-      <canvas id="profile-pic" width="500" height="500"></canvas>
+    <div>
+      <div class="form" id="form">
+        <form>
+          <div class="colors-container">
+            <h2>Personaliza tu fondo</h2>
+            <div class="radio">
+              <h4>¿Cuántos colores quieres?</h4>
+              <div class="input-options">
+                <div class="input">
+                  <input type="radio" id="one-color" value="one" name="colornumber" onclick="checkRadio()" checked>
+                  <label for="one-color">1 color</label>
+                </div>
+                <div class="input">
+                  <input type="radio" id="two-color" value="two" name="colornumber" onclick="checkRadio()">
+                  <label for="two-color">2 colores</label>
+                </div>
+                <div class="input">
+                  <input type="radio" id="three-color" value="three" name="colornumber" onclick="checkRadio()">
+                  <label for="three-color">3 colores</label>
+                </div>
+              </div>
+            </div>
+  
+            <div class="selector">
+              <h4>Elige color</h4>
+              <div class="input-options">
+                <div class="input color">
+                  <label for="color-primary">Color 1</label>
+                  <input id="color-primary" type="color" value="#e7c6ff">
+                </div>
+                <div class="input color">
+                  <label for="color-secondary">Color 2</label>
+                  <input id="color-secondary" type="color" value="#bbd0ff" disabled>
+                </div>
+                <div class="input color">
+                  <label for="color-terciary">Color 3</label>
+                  <input id="color-terciary" type="color" value="#004e89" disabled>
+                </div>
+              </div>
+            </div>
+            <div class="gradient" id="gradient-container" hidden>
+              <h4>Gradiente</h4>
+              <div class="input-options">
+                <div class="input">
+                  <input type="radio" id="linear" value="linear" name="gradient" checked>
+                  <label for="linear">Linear</label>
+                </div>
+                <div class="input">
+                  <input type="radio" id="radial" value="radial" name="gradient">
+                  <label for="radial">Radial</label>
+                </div>
+              </div>
+            </div>
+          </div>
+  
+          <div class="text-container">
+            <h2>Personaliza tu texto</h2>
+            <div>
+              <div class="input">
+                <label for="family">Elige una fuente</label>
+                <select name="fontfamily" id="family">
+                  <option value="Verdana" selected>Verdana</option>
+                  <option value="Impact">Impact</option>
+                  <option value="Calibri">Calibri</option>
+                  <option value="Yusei Magic">Yusei Magic</option>
+                  <option value="Righteous">Righteous</option>
+                  <option value="Pacifico">Pacifico</option>
+                  <option value="Permanent Marker">Permanent Marker</option>
+                  <option value="Sacramento">Sacramento</option>
+                  <option value="Hachi Maru Pop">Hachi Maru Pop</option>
+                  <option value="Monoton">Monoton</option>
+                </select>
+              </div>
+              <div class="input">
+                <label for="border">Borde</label>
+                <input type="checkbox" id="border" name="border" onclick="checkBorder()"">
+              </div>
+            </div>
+  
+            <div class="text-color">
+              <h4>Elige un color</h4>
+              <div>
+                <div class="input">
+                  <label for="color-text"> Color del Texto</label>
+                  <input type="color" id="color-text" value="#6d6875">
+                </div>
+                <div class="input">
+                  <label for="border-color-text"> Borde del Texto</label>
+                  <input type="color" id="border-color-text" value="#000000" disabled>
+                </div>
+              </div>
+            </div>
+          </div>
+        </form>
+      </div>
     </div>
-
-    <div class="form" id="form">
-      <form>
-        <div class="colors-container">
-          <h3>Fondo</h3>
-          <div class="radio">
-            <h4>Número de Colores</h4>
-            <input type="radio" id="one-color" value="one" name="colornumber" onclick="checkRadio()" checked>
-            <label for="one-color">1 color</label>
-
-            <input type="radio" id="two-color" value="two" name="colornumber" onclick="checkRadio()">
-            <label for="two-color">2 colores</label>
-
-            <input type="radio" id="three-color" value="three" name="colornumber" onclick="checkRadio()">
-            <label for="three-color">3 colores</label>
-          </div>
-
-          <div class="gradient" id="gradient-container" hidden>
-            <h4>Gradiente</h4>
-            <input type="radio" id="linear" value="linear" name="gradient" checked>
-            <label for="linear">Linear</label>
-            <input type="radio" id="radial" value="radial" name="gradient">
-            <label for="radial">Radial</label>
-          </div>
-
-          <div class="selector">
-            <h4>Color</h4>
-            <div class="input">
-              <label for="color-primary">Color Primario</label>
-              <input id="color-primary" type="color" value="#0000ff">
-            </div>
-            <div class="input">
-              <label for="color-secondary">Color Secundario</label>
-              <input id="color-secondary" type="color" value="#00ff00" disabled>
-            </div>
-            <div class="input">
-              <label for="color-terciary">Color Terciario</label>
-              <input id="color-terciary" type="color" value="#ff0000" disabled>
-            </div>
-          </div>
-        </div>
-
-        <div class="text-container">
-          <h3>Texto</h3>
-          <div class="switch">
-            <label for="family">Fuente</label>
-            <select name="fontfamily" id="family">
-              <option value="Verdana" selected>Verdana</option>
-              <option value="Impact">Impact</option>
-              <option value="Calibri">Calibri</option>
-              <option value="Yusei Magic">Yusei Magic</option>
-              <option value="Righteous">Righteous</option>
-              <option value="Pacifico">Pacifico</option>
-              <option value="Permanent Marker">Permanent Marker</option>
-              <option value="Sacramento">Sacramento</option>
-              <option value="Hachi Maru Pop">Hachi Maru Pop</option>
-              <option value="Monoton">Monoton</option>
-            </select>
-          </div>
-          <div class="check">
-            <label for="border">Borde</label>
-            <input type="checkbox" id="border" name="border" onclick="checkBorder()"">
-          </div>
-
-          <div class=" selector">
-            <h4>Color</h4>
-            <div class="input">
-              <label for="color-text"> Color del Texto</label>
-              <input type="color" id="color-text" value="#ffff00">
-            </div>
-            <div class="input">
-              <label for="border-color-text"> Borde del Texto</label>
-              <input type="color" id="border-color-text" value="#000000" disabled>
-            </div>
-          </div>
-
-      </form>
+    <div class="buttons-result">
+      <button class="draw" onclick="draw()">Dibujar</button>
+      <div class="image-container">
+        <canvas id="profile-pic" width="350" height="350"></canvas>
+      </div>
+      <div class="form" id="export">
+        <button class="save" onclick="saveImage()">Descargar</button>
+      </div>
     </div>
-
-    <button onclick="draw()">Dibujar</button>
-  </div>
-  <div class="form" id="export">
-    <button onclick="saveImage()">Descargar</button>
   </div>
 
-  </div>
+
   <script src="index.js"></script>
 </body>
 
