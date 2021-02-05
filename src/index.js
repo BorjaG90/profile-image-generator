@@ -1,4 +1,5 @@
-// Eventos
+
+/* ***Eventos*** */
 /**
  * Comprueba si el check de borde esta activo
  */
@@ -16,14 +17,21 @@ function checkBorder() {
 function checkRadio() {
   if (document.querySelector("form").colornumber.value === "one") {
     document.getElementById("gradient-container").hidden = true;
+    document.querySelector("#color-secondary").disabled = true;
+    document.querySelector("#color-terciary").disabled = true;
   } else {
     document.getElementById("gradient-container").hidden = false;
+    if (document.querySelector("form").colornumber.value === "two") {
+      document.querySelector("#color-secondary").disabled = false;
+      document.querySelector("#color-terciary").disabled = true;
+    } else {
+      document.querySelector("#color-secondary").disabled = false;
+      document.querySelector("#color-terciary").disabled = false;
+    }
   }
 }
 
-
-
-// Funciones
+/* ***Funciones*** */
 /**
  * Dibuja la imagen de perfil con los elementos seleccionados
  */
@@ -46,22 +54,44 @@ function draw() {
     ctx.stroke();
 
     // Fondo
-    if(colorNumber.value === "one"){
+    if (colorNumber.value === "one") {
+      // Relleno de un color
       ctx.fillStyle = primaryColor;
-    }else if (colorNumber.value === "two"){
+    } else if (colorNumber.value === "two") {
+      // Relleno de dos colores
       var secondaryColor = document.querySelector("#color-secondary").value;
-      var terciaryColor = document.querySelector("#color-terciary").value;
       var gradient = form.gradient.value;
-      console.log(gradient);
-      if(gradient === "linear"){
+      if (gradient === "linear") {
+        // Gradiente linear
         var lingrad = ctx.createLinearGradient(0, 0, 0, 500);
         lingrad.addColorStop(0, primaryColor);
         lingrad.addColorStop(1, secondaryColor);
         ctx.fillStyle = lingrad;
-      }else{
-        var radgrad = ctx.createRadialGradient(250, 250, 55, 150, 190, 500);
+      } else {
+        // Gradiente radial
+        var radgrad = ctx.createRadialGradient(250, 250, 55, 250, 250, 300);
         radgrad.addColorStop(0, primaryColor);
         radgrad.addColorStop(1, secondaryColor);
+        ctx.fillStyle = radgrad;
+      }
+    } else {
+      // Relleno de tres colores
+      var secondaryColor = document.querySelector("#color-secondary").value;
+      var terciaryColor = document.querySelector("#color-terciary").value;
+      var gradient = form.gradient.value;
+      if (gradient === "linear") {
+        // Gradiente linear
+        var lingrad = ctx.createLinearGradient(0, 0, 0, 500);
+        lingrad.addColorStop(0, primaryColor);
+        lingrad.addColorStop(0.5, secondaryColor);
+        lingrad.addColorStop(1, terciaryColor);
+        ctx.fillStyle = lingrad;
+      } else {
+        // Gradiente radial
+        var radgrad = ctx.createRadialGradient(250, 250, 40, 250, 250, 250);
+        radgrad.addColorStop(0, primaryColor);
+        radgrad.addColorStop(0.5, secondaryColor);
+        radgrad.addColorStop(1, terciaryColor);
         ctx.fillStyle = radgrad;
       }
     }
@@ -69,10 +99,12 @@ function draw() {
 
     // Texto
     if (form.border.checked) {
+      // Con borde
       var borderColor = document.querySelector("#border-color-text").value;
-      addText(canvas, ctx, 60, "Verdana", textColor, borderColor);
+      addText(canvas, ctx, 55, form.fontfamily.value, textColor, borderColor);
     } else {
-      addText(canvas, ctx, 60, "Verdana", textColor);
+      // Sin borde
+      addText(canvas, ctx, 55, form.fontfamily.value, textColor);
     }
   }
 }
@@ -109,9 +141,11 @@ function clearCanvas(canvas, context) {
   context.restore();
 }
 
-/** Añade el texto plano */
+/**
+ * Añade el texto al canvas
+ */
 function addText(canvas, context, fontSize, fontFamily, color, border = null) {
-  context.font = fontSize + "px " + fontFamily;
+  context.font = `${fontSize}px ${fontFamily}`;
   context.fontWeight = "bolder";
   context.textAlign = "center";
   context.fillStyle = color;
@@ -134,5 +168,3 @@ function addText(canvas, context, fontSize, fontFamily, color, border = null) {
     );
   }
 }
-
-

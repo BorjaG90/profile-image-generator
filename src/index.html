@@ -6,6 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Generador de imagen de perfil</title>
   <link rel="stylesheet" href="index.css" />
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Permanent+Marker&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
 </head>
 
 <body>
@@ -22,47 +30,22 @@
           <h3>Fondo</h3>
           <div class="radio">
             <h4>Número de Colores</h4>
+            <input type="radio" id="one-color" value="one" name="colornumber" onclick="checkRadio()" checked>
             <label for="one-color">1 color</label>
-            <input 
-              type="radio" 
-              id="one-color" 
-              value="one" 
-              name="colornumber" 
-              onclick="checkRadio()"
-              checked>
-            
+
+            <input type="radio" id="two-color" value="two" name="colornumber" onclick="checkRadio()">
             <label for="two-color">2 colores</label>
-            <input 
-              type="radio" 
-              id="two-color" 
-              value="two" 
-              name="colornumber"
-              onclick="checkRadio()">
-            
+
+            <input type="radio" id="three-color" value="three" name="colornumber" onclick="checkRadio()">
             <label for="three-color">3 colores</label>
-            <input 
-              type="radio" 
-              id="three-color" 
-              value="three" 
-              name="colornumber"
-              onclick="checkRadio()">
           </div>
 
           <div class="gradient" id="gradient-container" hidden>
             <h4>Gradiente</h4>
+            <input type="radio" id="linear" value="linear" name="gradient" checked>
             <label for="linear">Linear</label>
-            <input 
-              type="radio" 
-              id="linear" 
-              value="linear" 
-              name="gradient" 
-              checked>
+            <input type="radio" id="radial" value="radial" name="gradient">
             <label for="radial">Radial</label>
-            <input 
-              type="radio" 
-              id="radial" 
-              value="radial" 
-              name="gradient">
           </div>
 
           <div class="selector">
@@ -84,16 +67,27 @@
 
         <div class="text-container">
           <h3>Texto</h3>
+          <div class="switch">
+            <label for="family">Fuente</label>
+            <select name="fontfamily" id="family">
+              <option value="Verdana" selected>Verdana</option>
+              <option value="Impact">Impact</option>
+              <option value="Calibri">Calibri</option>
+              <option value="Yusei Magic">Yusei Magic</option>
+              <option value="Righteous">Righteous</option>
+              <option value="Pacifico">Pacifico</option>
+              <option value="Permanent Marker">Permanent Marker</option>
+              <option value="Sacramento">Sacramento</option>
+              <option value="Hachi Maru Pop">Hachi Maru Pop</option>
+              <option value="Monoton">Monoton</option>
+            </select>
+          </div>
           <div class="check">
             <label for="border">Borde</label>
-            <input 
-              type="checkbox" 
-              id="border" 
-              name="border" 
-              onclick="checkBorder()"">
+            <input type="checkbox" id="border" name="border" onclick="checkBorder()"">
           </div>
 
-          <div class="selector">
+          <div class=" selector">
             <h4>Color</h4>
             <div class="input">
               <label for="color-text"> Color del Texto</label>
@@ -101,11 +95,7 @@
             </div>
             <div class="input">
               <label for="border-color-text"> Borde del Texto</label>
-              <input 
-                type="color" 
-                id="border-color-text" 
-                value="#000000" 
-                disabled>
+              <input type="color" id="border-color-text" value="#000000" disabled>
             </div>
           </div>
 
