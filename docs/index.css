@@ -1,10 +1,136 @@
 body {
-  font-family: Verdana, Geneva, Tahoma, sans-serif
+  font-family: 'Inter', sans-serif;
+}
+
+h1 {
+  text-align: center;
+  font-weight: bold;
+  font-family: 'Bebas Neue', cursive;
+}
+
+label {
+  font-size: 16px;
+}
+
+.container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.input-options {
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 20px;
+}
+
+.input {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.color {
+  flex-direction: column;
+}
+
+.text-container {
+  margin-top: 50px;
+}
+
+.text-container div {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+
+.text-container div .input {
+  flex-direction: column;
+}
+
+input[type="color"] {
+  height: 35px;
+  width: 35px;
+  padding: 2px 4px;
+  border-radius: 5px;
+  border-width: 2px;
+}
+
+input[type="color"]:disabled {
+  opacity: 0.6;
+}
+
+input[type=checkbox] {
+  transform: scale(3);
+  margin-top: 10px;
+  align-self: center;
+}
+
+select, button {
+  padding: 10px;
+}
+
+.text-color {
+  display: flex;
+  flex-direction: column;
+}
+
+.text-color .input {
+  align-items: center;
+  width: 150px;
+}
+
+.buttons-result {
+  text-align: center;
 }
 
 .image-container {
-  width: fit-content;
-  height: fit-content;
+  padding: 10px;
+  width: 350px;
+  height: 350px;
   border: solid 1px black;
-  border-radius: 15%;
+  border-radius: 15px;
+}
+
+button {
+  font-family: 'Inter', sans-serif;
+  color: #1a535c !important;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 16px;
+  background: #ffffff;
+  margin: 20px 0 30px;
+  width: 300px;
+  height: 67px;
+  padding: 20px;
+  border-radius: 15px;
+  border: 4px solid #1a535c !important;
+  display: inline-block;
+  transition: all 0.2s ease 0s;
+}
+
+button:hover {
+  color: #ffffff !important;
+  font-size: 18px;
+  transition: all 0.2s ease 0s;
+}
+
+button.draw:hover {
+  background: #2ec4b6;
+  border-color: #2ec4b6 !important;
+}
+
+button.save:hover {
+  background: #1a535c !important;
+  border-color: #1a535c !important;
+}
+
+@media (min-width: 769px) {
+  .container {
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 10%;
+  }
 }

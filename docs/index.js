@@ -51,7 +51,6 @@ function draw() {
     // Circulo
     ctx.beginPath();
     ctx.arc(175, 175, 175, 0, Math.PI * 2, true);
-    ctx.stroke();
 
     // Fondo
     if (colorNumber.value === "one") {
@@ -63,7 +62,7 @@ function draw() {
       var gradient = form.gradient.value;
       if (gradient === "linear") {
         // Gradiente linear
-        var lingrad = ctx.createLinearGradient(0, 0, 0, 500);
+        var lingrad = ctx.createLinearGradient(0, 0, 0, 350);
         lingrad.addColorStop(0, primaryColor);
         lingrad.addColorStop(1, secondaryColor);
         ctx.fillStyle = lingrad;
@@ -81,7 +80,7 @@ function draw() {
       var gradient = form.gradient.value;
       if (gradient === "linear") {
         // Gradiente linear
-        var lingrad = ctx.createLinearGradient(0, 0, 0, 500);
+        var lingrad = ctx.createLinearGradient(0, 0, 0, 350);
         lingrad.addColorStop(0, primaryColor);
         lingrad.addColorStop(0.5, secondaryColor);
         lingrad.addColorStop(1, terciaryColor);
