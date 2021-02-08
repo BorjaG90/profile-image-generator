@@ -45,8 +45,14 @@ function draw() {
   if (canvas.getContext) {
     var ctx = canvas.getContext("2d");
 
+    // Precarga de fuente
+    /* Hacemos esto para que la fuente se cargue correctamente 
+      cuando la vayamos a usar */
+    addText(canvas, ctx, 35, form.fontfamily.value, textColor);
+
     // Limpiar
-    clearCanvas(canvas, ctx);
+    setTimeout(clearCanvas(canvas, ctx), 5000);
+
 
     // Circulo
     ctx.beginPath();
