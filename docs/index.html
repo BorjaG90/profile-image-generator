@@ -31,15 +31,15 @@
   <div class="container">
     <div>
       <div class="info">
-        <p><span class="material-icons">info</span>
-          Elige los colores y pulsa dibujar para ver el resultado</p>
+        <span class="material-icons">info</span>
+          Elige los colores y pulsa dibujar para ver el resultado
       </div>
       <div class="form" id="form">
         <form>
           <div class="colors-container">
             <h2><span class="material-icons">panorama</span> Personaliza tu fondo</h2>
             <div class="radio">
-              <h4>¿Cuántos colores quieres?</h4>
+              <h3>¿Cuántos colores quieres?</h3>
               <div class="input-options">
                 <div class="input">
                   <input type="radio" id="one-color" value="one" name="colornumber" onclick="checkRadio()" checked>
@@ -57,7 +57,7 @@
             </div>
 
             <div class="selector">
-              <h4>Elige color</h4>
+              <h3>Elige color</h3>
               <div class="input-options">
                 <div class="input color">
                   <label for="color-primary">Color 1</label>
@@ -74,7 +74,7 @@
               </div>
             </div>
             <div class="gradient" id="gradient-container" hidden>
-              <h4>Gradiente</h4>
+              <h3>Gradiente</h3>
               <div class="input-options">
                 <div class="input">
                   <input type="radio" id="linear" value="linear" name="gradient" checked>
@@ -123,7 +123,7 @@
             </div>
   
             <div class="text-color">
-                <h4>Elige un color</h4>
+                <h3>Elige un color</h3>
                 <div>
                   <div class="input">
                     <label for="color-text"> Color del Texto</label>
@@ -141,7 +141,9 @@
     </div>
     <div class="buttons-result">
       <button class="draw" onclick="draw()">
-        <span class="material-icons">edit</span>Dibujar
+        <div class="button-content">
+          <span class="material-icons">edit</span>Dibujar
+        </div>
       </button>
       <div class="image-container">
         <canvas id="picture-preview" width="350" height="350"></canvas>
@@ -153,13 +155,15 @@
           class="save" 
           onclick="saveImage()" 
           disabled>
-          <span class="material-icons">download</span>Descargar
+          <div class="button-content">
+            <span class="material-icons">download</span>Descargar
+          </div>
         </button>
       </div>
     </div>
   </div>
 
-  <div class="preload" hidden>
+  <div class="preload">
     <span class="fontfamily1">Verdana</span>
     <span class="fontfamily2">Arial Blac</span>
     <span class="fontfamily3">Impact</span>
