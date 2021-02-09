@@ -12,6 +12,55 @@ label {
   font-size: 16px;
 }
 
+.fontfamily1 {
+  font-family: Verdana;
+}
+.fontfamily2 {
+  font-family: "Arial Black";
+}
+.fontfamily3 {
+  font-family: Impact;
+}
+.fontfamily4 {
+  font-family: Calibri;
+}
+.fontfamily5 {
+  font-family: "Yusei Magic";
+}
+.fontfamily6 {
+  font-family: Righteous;
+}
+.fontfamily7 {
+  font-family: Pacifico;
+}
+.fontfamily8 {
+  font-family: "Permanent Marker";
+}
+.fontfamily9 {
+  font-family: Sacramento;
+}
+.fontfamily10 {
+  font-family: "Hachi Maru Pop";
+}
+.fontfamily11 {
+  font-family: Monoton;
+}
+.fontfamily12 {
+  font-family: "Zilla Slab Highlight";
+}
+.fontfamily13 {
+  font-family: "Mountanis of Christmas";
+}
+.fontfamily14 {
+  font-family: Frijole;
+}
+.fontfamily15 {
+  font-family: Bonbon;
+}
+.fontfamily16 {
+  font-family: "Kaushan Script";
+}
+
 .container {
   display: flex;
   flex-direction: column;
