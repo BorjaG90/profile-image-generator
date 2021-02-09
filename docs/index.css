@@ -134,7 +134,11 @@ input[type=checkbox] {
   align-self: center;
 }
 
-input[type='radio'] { transform: scale(2); }
+input[type='radio'] { 
+  transform: scale(2); 
+  height: 14px;
+  width: 14px;
+}
 
 select, button {
   padding: 10px;
