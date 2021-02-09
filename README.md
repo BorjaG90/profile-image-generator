@@ -18,7 +18,7 @@ A dynamic profile image generator
 
 * Text with or without border
 
-* Ten different font families
+* More than ten different font families
    
 ## Built with
 ### Technologies
