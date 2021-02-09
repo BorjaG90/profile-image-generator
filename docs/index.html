@@ -6,7 +6,12 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Generador de imagen de perfil</title>
   <link rel="stylesheet" href="index.css" />
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    rel="stylesheet">
   <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap"
+    rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Yusei+Magic&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Righteous&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
@@ -14,20 +19,25 @@
   <link href="https://fonts.googleapis.com/css2?family=Sacramento&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Hachi+Maru+Pop&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Monoton&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
-  <link rel="preconnect" href="https://fonts.gstatic.com">
-<link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Inter:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Zilla+Slab+Highlight&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Mountains+of+Christmas&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Frijole&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bonbon&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Kaushan+Script&display=swap" rel="stylesheet">
 </head>
 
 <body>
   <h1>Generador de fotos de perfil</h1>
   <div class="container">
     <div>
+      <div class="info">
+        <p><span class="material-icons">info</span>
+          Elige los colores y pulsa dibujar para ver el resultado</p>
+      </div>
       <div class="form" id="form">
         <form>
           <div class="colors-container">
-            <h2>Personaliza tu fondo</h2>
+            <h2><span class="material-icons">panorama</span> Personaliza tu fondo</h2>
             <div class="radio">
               <h4>¿Cuántos colores quieres?</h4>
               <div class="input-options">
@@ -45,7 +55,7 @@
                 </div>
               </div>
             </div>
-  
+
             <div class="selector">
               <h4>Elige color</h4>
               <div class="input-options">
@@ -77,14 +87,15 @@
               </div>
             </div>
           </div>
-  
+
           <div class="text-container">
-            <h2>Personaliza tu texto</h2>
+            <h2><span class="material-icons">font_download</span> Personaliza tu texto</h2>
             <div>
               <div class="input">
                 <label for="family">Elige una fuente</label>
                 <select name="fontfamily" id="family">
                   <option value="Verdana" selected>Verdana</option>
+                  <option value="Arial Black">Arial</option>
                   <option value="Impact">Impact</option>
                   <option value="Calibri">Calibri</option>
                   <option value="Yusei Magic">Yusei Magic</option>
@@ -94,7 +105,16 @@
                   <option value="Sacramento">Sacramento</option>
                   <option value="Hachi Maru Pop">Hachi Maru Pop</option>
                   <option value="Monoton">Monoton</option>
+                  <option value="Zilla Slab Highlight">Zilla Slab</option>
+                  <option value="Mountains of Christmas">Mountains</option>
+                  <option value="Frijole">Frijole</option>
+                  <option value="Bonbon">Bonbon</option>
+                  <option value="Kaushan Script">Kaushan</option>
                 </select>
+              </div>
+              <div class="input">
+                <label for="shift">Mayúsculas</label>
+                <input type="checkbox" id="shift" name="shift">
               </div>
               <div class="input">
                 <label for="border">Borde</label>
@@ -103,29 +123,38 @@
             </div>
   
             <div class="text-color">
-              <h4>Elige un color</h4>
-              <div>
-                <div class="input">
-                  <label for="color-text"> Color del Texto</label>
-                  <input type="color" id="color-text" value="#6d6875">
-                </div>
-                <div class="input">
-                  <label for="border-color-text"> Borde del Texto</label>
-                  <input type="color" id="border-color-text" value="#000000" disabled>
+                <h4>Elige un color</h4>
+                <div>
+                  <div class="input">
+                    <label for="color-text"> Color del Texto</label>
+                    <input type="color" id="color-text" value="#6d6875">
+                  </div>
+                  <div class="input">
+                    <label for="border-color-text"> Borde del Texto</label>
+                    <input type="color" id="border-color-text" value="#cccccc" disabled>
+                  </div>
                 </div>
               </div>
             </div>
-          </div>
         </form>
       </div>
     </div>
     <div class="buttons-result">
-      <button class="draw" onclick="draw()">Dibujar</button>
+      <button class="draw" onclick="draw()">
+        <span class="material-icons">edit</span>Dibujar
+      </button>
       <div class="image-container">
-        <canvas id="profile-pic" width="350" height="350"></canvas>
+        <canvas id="picture-preview" width="350" height="350"></canvas>
+        <canvas id="profile-pic" width="750" height="750" hidden></canvas>
       </div>
       <div class="form" id="export">
-        <button class="save" onclick="saveImage()">Descargar</button>
+        <button 
+          id="export-button" 
+          class="save" 
+          onclick="saveImage()" 
+          disabled>
+          <span class="material-icons">download</span>Descargar
+        </button>
       </div>
     </div>
   </div>

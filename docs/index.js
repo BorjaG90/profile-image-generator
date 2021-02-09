@@ -32,16 +32,11 @@ function checkRadio() {
 }
 
 /* ***Funciones*** */
-/**
- * Dibuja la imagen de perfil con los elementos seleccionados
- */
-function draw() {
-  var canvas = document.getElementById("profile-pic");
-  var form = document.querySelector("form");
+
+function drawPreview(canvas, form){
   var colorNumber = form.colornumber;
   var primaryColor = document.querySelector("#color-primary").value;
   var textColor = document.querySelector("#color-text").value;
-
   if (canvas.getContext) {
     var ctx = canvas.getContext("2d");
 
@@ -52,7 +47,6 @@ function draw() {
 
     // Limpiar
     setTimeout(clearCanvas(canvas, ctx), 5000);
-
 
     // Circulo
     ctx.beginPath();
@@ -106,12 +100,103 @@ function draw() {
     if (form.border.checked) {
       // Con borde
       var borderColor = document.querySelector("#border-color-text").value;
-      addText(canvas, ctx, 35, form.fontfamily.value, textColor, borderColor);
+      addText(canvas, ctx, 35, form.fontfamily.value, textColor, form.shift.checked, borderColor);
     } else {
       // Sin borde
-      addText(canvas, ctx, 35, form.fontfamily.value, textColor);
+      addText(canvas, ctx, 35, form.fontfamily.value, textColor, form.shift.checked);
     }
   }
+}
+
+function drawProfile(canvas, form){
+  var colorNumber = form.colornumber;
+  var primaryColor = document.querySelector("#color-primary").value;
+  var textColor = document.querySelector("#color-text").value;
+
+  if (canvas.getContext) {
+    var ctx = canvas.getContext("2d");
+
+    // Precarga de fuente
+    /* Hacemos esto para que la fuente se cargue correctamente 
+      cuando la vayamos a usar */
+    addText(canvas, ctx, 35, form.fontfamily.value, textColor);
+
+    // Limpiar
+    setTimeout(clearCanvas(canvas, ctx), 5000);
+
+
+    // Circulo
+    ctx.beginPath();
+    ctx.arc(375, 375, 375, 0, Math.PI * 2, true);
+
+    // Fondo
+    if (colorNumber.value === "one") {
+      // Relleno de un color
+      ctx.fillStyle = primaryColor;
+    } else if (colorNumber.value === "two") {
+      // Relleno de dos colores
+      var secondaryColor = document.querySelector("#color-secondary").value;
+      var gradient = form.gradient.value;
+      if (gradient === "linear") {
+        // Gradiente linear
+        var lingrad = ctx.createLinearGradient(0, 0, 0, 750);
+        lingrad.addColorStop(0, primaryColor);
+        lingrad.addColorStop(1, secondaryColor);
+        ctx.fillStyle = lingrad;
+      } else {
+        // Gradiente radial
+        var radgrad = ctx.createRadialGradient(375, 375, 90, 375, 375, 500);
+        radgrad.addColorStop(0, primaryColor);
+        radgrad.addColorStop(1, secondaryColor);
+        ctx.fillStyle = radgrad;
+      }
+    } else {
+      // Relleno de tres colores
+      var secondaryColor = document.querySelector("#color-secondary").value;
+      var terciaryColor = document.querySelector("#color-terciary").value;
+      var gradient = form.gradient.value;
+      if (gradient === "linear") {
+        // Gradiente linear
+        var lingrad = ctx.createLinearGradient(0, 0, 0, 750);
+        lingrad.addColorStop(0, primaryColor);
+        lingrad.addColorStop(0.5, secondaryColor);
+        lingrad.addColorStop(1, terciaryColor);
+        ctx.fillStyle = lingrad;
+      } else {
+        // Gradiente radial
+        var radgrad = ctx.createRadialGradient(375, 375, 120, 375, 375, 375);
+        radgrad.addColorStop(0, primaryColor);
+        radgrad.addColorStop(0.5, secondaryColor);
+        radgrad.addColorStop(1, terciaryColor);
+        ctx.fillStyle = radgrad;
+      }
+    }
+    ctx.fill();
+
+    // Texto
+    if (form.border.checked) {
+      // Con borde
+      var borderColor = document.querySelector("#border-color-text").value;
+      addText(canvas, ctx, 75, form.fontfamily.value, textColor, form.shift.checked, borderColor);
+    } else {
+      // Sin borde
+      addText(canvas, ctx, 75, form.fontfamily.value, textColor, form.shift.checked);
+    }
+  }
+}
+
+/**
+ * Ejecuta el proceso de dibujo
+ */
+function draw() {
+  var preview = document.getElementById("picture-preview");
+  var canvas = document.getElementById("profile-pic");
+  var form = document.querySelector("form");
+
+  drawPreview(preview, form);
+  drawProfile(canvas, form);
+
+  document.getElementById("export-button").disabled = false;
 }
 
 /**
@@ -149,25 +234,40 @@ function clearCanvas(canvas, context) {
 /**
  * Añade el texto al canvas
  */
-function addText(canvas, context, fontSize, fontFamily, color, border = null) {
+function addText(canvas, context, fontSize, fontFamily, color, shift, border = null) {
+  const text1 = "El Género";
+  const text2 = "no";
+  const text3 = "tiene Color";
   context.font = `${fontSize}px ${fontFamily}`;
   context.fontWeight = "bolder";
   context.textAlign = "center";
   context.fillStyle = color;
-  context.fillText("EL GÉNERO", canvas.width / 2, canvas.height / 3 + 15);
-  context.fillText("NO", canvas.width / 2, canvas.width / 2 + 15);
   context.fillText(
-    "TIENE COLOR",
+    shift ? text1.toUpperCase(): text1, 
+    canvas.width / 2, 
+    canvas.height / 3 + 15);
+  context.fillText(
+    shift ? text2.toUpperCase(): text2, 
+    canvas.width / 2, 
+    canvas.width / 2 + 15);
+  context.fillText(
+    shift ? text3.toUpperCase(): text3,
     canvas.width / 2,
     (canvas.height / 3) * 2 + 15
   );
   // Si dibujamos texto con borde
   if (border != null) {
     context.strokeStyle = border;
-    context.strokeText("EL GÉNERO", canvas.width / 2, canvas.height / 3 + 15);
-    context.strokeText("NO", canvas.width / 2, canvas.width / 2 + 15);
     context.strokeText(
-      "TIENE COLOR",
+      shift ? text1.toUpperCase(): text1, 
+      canvas.width / 2, 
+      canvas.height / 3 + 15);
+    context.strokeText(
+      shift ? text2.toUpperCase(): text2, 
+      canvas.width / 2, 
+      canvas.width / 2 + 15);
+    context.strokeText(
+      shift ? text3.toUpperCase(): text3,
       canvas.width / 2,
       (canvas.height / 3) * 2 + 15
     );

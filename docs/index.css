@@ -93,6 +93,11 @@ select, button {
   border-radius: 15px;
 }
 
+button:disabled{
+  background: grey !important;
+  border-color: black !important;
+}
+
 button {
   font-family: 'Inter', sans-serif;
   color: #1a535c !important;
