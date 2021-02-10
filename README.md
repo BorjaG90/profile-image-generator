@@ -1,7 +1,7 @@
 # Profile Image Generator
 
 ![Project-Work](https://img.shields.io/badge/Project-Work-red.svg)
-![Status-In_Progress](https://img.shields.io/badge/Status-In_progress-brightgreen.svg)
+![Status-Finished](https://img.shields.io/badge/Status-Finished-blue.svg)
 ![Maintained-Yes](https://img.shields.io/badge/Maintained-Yes-brightgreen.svg)
 <a href="https://github.com/BorjaG90/profile-image-generator" alt="Github Repository Link">
   <img alt="github repo" src="https://img.shields.io/badge/github-repo-black?logo=github"/>
