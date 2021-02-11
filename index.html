@@ -7,19 +7,19 @@
   <title>Generador de imagen de perfil</title>
   <!--CSS-->
   <link rel="stylesheet" href="./public/index.css" />
+  
   <!--Favicon-->
-  <!-- PARA CUALQUIER NAVEGADOR -->
-<link rel="icon" href="./public/favicon36.png" sizes="36x36" type="image/png">
- 
-<!-- PARA LOS MODELOS MAS RECIENTES DE IPAD Y IPHONE -->
-<link rel="apple-touch-icon-precomposed" href="./public/favicon96.png" type="image/png" sizes="96x96">
-<link rel="apple-touch-icon-precomposed" href="./public/favicon36.png" type="image/png" sizes="36x36">
- 
-<!-- PARA GOOGLE TV -->
-<link rel="icon" href="./public/favicon96.png" sizes="96x96" type="image/png">
+  <!-- Web Browser -->
+  <link rel="icon" href="./public/favicon36.png" sizes="36x36" type="image/png">
+  <!-- Apple -->
+  <link rel="apple-touch-icon-precomposed" href="./public/favicon96.png" type="image/png" sizes="96x96">
+  <link rel="apple-touch-icon-precomposed" href="./public/favicon36.png" type="image/png" sizes="36x36">
+  <!-- GoogleTV -->
+  <link rel="icon" href="./public/favicon96.png" sizes="96x96" type="image/png">
+  
   <!--Material icons-->
-  <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+  
   <!--Google Fonts-->
   <link rel="preconnect" href="https://fonts.gstatic.com">
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600&display=swap" rel="stylesheet">
@@ -45,7 +45,7 @@
     <div>
       <div class="info">
         <span class="material-icons">info</span>
-          Elige los colores y pulsa dibujar para ver el resultado
+        Elige los colores y pulsa dibujar para ver el resultado
       </div>
       <div class="form" id="form">
         <form>
@@ -135,7 +135,7 @@
               </div>
             </div>
   
-            <div class="text-color">
+            <div class=" text-color">
                 <h3>Elige un color</h3>
                 <div>
                   <div class="input">
@@ -163,11 +163,7 @@
         <canvas id="profile-pic" width="750" height="750" hidden></canvas>
       </div>
       <div class="form" id="export">
-        <button 
-          id="export-button" 
-          class="save" 
-          onclick="saveImage()" 
-          disabled>
+        <button id="export-button" class="save" onclick="saveImage()" disabled>
           <div class="button-content">
             <span class="material-icons">download</span>Descargar
           </div>
