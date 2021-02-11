@@ -70,6 +70,7 @@ label {
 .fontfamily16 {
   font-family: "Kaushan Script";
 }
+
 .info {
   display: flex;
   align-items: center;
@@ -218,11 +219,47 @@ button .button-content {
   margin-top: 50%;
 }
 
+a{
+  text-decoration: none;
+  color: black;
+}
+
+a:hover{
+  color: blue;
+}
+
+footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-around;
+  margin: 10px;
+}
+
+footer .card {
+  display: flex;
+  align-items: center;
+  justify-content: space-evenly;
+  margin: 10px;
+}
+
 @media (min-width: 769px) {
   .container {
     flex-direction: row;
     justify-content: center;
     align-items: flex-start;
     gap: 10%;
+  }
+
+  footer{
+    flex-wrap: nowrap;
+    padding-top: 15px;
+    margin-top: 15px;
+    justify-content: center;
+    gap: 15px
+  }
+
+  footer .card{
+    margin: 0;
   }
 }
