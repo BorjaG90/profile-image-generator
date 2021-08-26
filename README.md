@@ -1,16 +1,15 @@
+<div align="center">
+
 # Profile Image Generator
 
-![Project-Work](https://img.shields.io/badge/Project-Work-red.svg)
-![Status-Finished](https://img.shields.io/badge/Status-Finished-blue.svg)
-![Maintained-Yes](https://img.shields.io/badge/Maintained-Yes-brightgreen.svg)
-<a href="https://github.com/BorjaG90/profile-image-generator" alt="Github Repository Link">
-  <img alt="github repo" src="https://img.shields.io/badge/github-repo-black?logo=github"/>
-</a>
-<a href="https://www.javascript.com/" alt="Documentation Link">
-  <img alt="Documentation Link" src="https://img.shields.io/badge/Made_with-JavaScript-yellow"/>
-</a>
+[![Project](https://img.shields.io/badge/Project-Work-red.svg)][repo-link]
+[![Repository](https://img.shields.io/badge/github-black?logo=github)][repo-link]
+[![Language](https://img.shields.io/badge/Javascript-F0DB4F?logo=javascript&logoColor=000)][javascript-link]
 
 A dynamic profile image generator
+
+</div>
+<hr />
 
 ## Features
 
@@ -21,21 +20,39 @@ A dynamic profile image generator
 * More than ten different font families
    
 ## Built with
+
 ### Technologies
-<a href="https://www.javascript.com/"><img src="https://raw.githubusercontent.com/BorjaG90/media/master/img/logos/javascript.jpeg" width=50 alt="JavaScript"></a>
+[<img src="https://raw.githubusercontent.com/BorjaG90/media/master/img/logos/javascript.jpeg" width=50 alt="Typescript">][javascript-link]
 
 ### Platforms
-<a href="https://code.visualstudio.com/"><img src="https://raw.githubusercontent.com/BorjaG90/media/master/img/logos/vscode.png" width=50 alt="VSCode"></a>
+[<img src="https://raw.githubusercontent.com/github/explore/bbd48b997e8d0bef63f676eca4da5e1f76487b56/topics/visual-studio-code/visual-studio-code.png" width=50 alt="VSCode">][vscode-link]
+
+<div align="center">
 
 ## Authors
-* **Borja Gete**
 
-<a href="mailto:borjag90dev@gmail.com" alt="Borja Gete mail"><img src="https://img.shields.io/badge/borjag90dev@gmail.com-DDDDDD?style=for-the-badge&logo=gmail" title="Go To mail" alt="Borja Gete mail"/></a> 
-<a href="https://github.com/BorjaG90" alt="Borja Gete Github"><img src="https://img.shields.io/badge/BorjaG90-black?style=for-the-badge&logo=github" title="Go To Github Profile" alt="Borja Gete Github"/></a> 
-<a href="https://linkedin.com/in/borjag90" alt="Borja Gete LinkedIn"><img src="https://img.shields.io/badge/BorjaG90-blue?style=for-the-badge&logo=linkedin" title="Go To LinkedIn Profile" alt="Borja Gete LinkedIn"/></a>
+**Borja Gete**
 
-* **Claudia Martínez**
+[![Mail](https://img.shields.io/badge/borjag90dev@gmail.com-DDDDDD?style=for-the-badge&logo=gmail)][borjag90dev-gmail]
+[![Github](https://img.shields.io/badge/BorjaG90-000000.svg?&style=for-the-badge&logo=github&logoColor=white)][borjag90dev-github]
+[![Gitlab](https://img.shields.io/badge/BorjaG90-purple.svg?&style=for-the-badge&logo=gitlab)][borjag90dev-gitlab]
+[![LinkedIn](https://img.shields.io/badge/borjag90-0077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)][borjag90dev-linkedin]
 
-<a href="mailto:claumartinezh@gmail.com" alt="Claudia Martinez mail"><img src="https://img.shields.io/badge/claumartinezh@gmail.com-DDDDDD?style=for-the-badge&logo=gmail" title="Go To mail" alt="Claudia Martinez mail"/></a> 
-<a href="https://github.com/claumartinezh" alt="Claudia Martinez Github"><img src="https://img.shields.io/badge/claumartinezh-black?style=for-the-badge&logo=github" title="Go To Github Profile" alt="Claudia Martinez Github"/></a> 
-<a href="https://linkedin.com/in/claudia-mh" alt="Claudia Martinez LinkedIn"><img src="https://img.shields.io/badge/Claudia_MH-blue?style=for-the-badge&logo=linkedin" title="Go To LinkedIn Profile" alt="Claudia Martinez LinkedIn"/></a>
+**Claudia Martínez**
+
+[![Mail](https://img.shields.io/badge/claumartinezh@gmail.com-DDDDDD?style=for-the-badge&logo=gmail)][clau-gmail]
+[![Github](https://img.shields.io/badge/claumartinezh-000000.svg?&style=for-the-badge&logo=github&logoColor=white)][clau-github]
+[![LinkedIn](https://img.shields.io/badge/Claudia_MH-0077B5.svg?&style=for-the-badge&logo=linkedin&logoColor=white)][clau-linkedin]
+
+</div>
+
+[borjag90dev-gmail]: mailto:borjag90dev@gmail.com
+[borjag90dev-github]: https://github.com/BorjaG90
+[borjag90dev-gitlab]: https://gitlab.com/BorjaG90
+[borjag90dev-linkedin]: https://www.linkedin.com/in/borjag90/
+[clau-gmail]: mailto:claumartinezh@gmail.com
+[clau-github]: https://github.com/claumartinezh
+[clau-linkedin]: https://linkedin.com/in/claudia-mh
+[repo-link]: https://github.com/BorjaG90/profile-image-generator
+[vscode-link]: https://code.visualstudio.com/
+[javascript-link]: https://www.javascript.com/
